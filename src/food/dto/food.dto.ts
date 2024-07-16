@@ -19,5 +19,5 @@ export class FoodDto implements Partial<IFood> {
     @ApiProperty({ example: 1, description: 'ID of the target consumer group' })
     @IsNumber()
     @IsPositive()
-    forWhom: number;
+    breedId: number;
 }

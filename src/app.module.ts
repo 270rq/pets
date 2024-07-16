@@ -9,6 +9,7 @@ import { FoodModule } from './food/food.module';
 import { OrderModule } from './order/order.module';
 import { OrderItemModule } from './order-item/order-item.module';
 import { PrismaModule } from './prisma/prisma.module';
+import { BreedModule } from './breed/breed.module';
 
 @Module({
   imports: [
@@ -17,7 +18,8 @@ import { PrismaModule } from './prisma/prisma.module';
     FoodModule,
     OrderModule,
     OrderItemModule,
-    PrismaModule
+    PrismaModule,
+    BreedModule
   ],
   controllers: [
     UserController,

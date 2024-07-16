@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNumber, IsDateString, IsString } from 'class-validator';
+import { IsNumber, IsString, IsDate } from 'class-validator';
 import { IOrder } from 'src/interface/interface';
 
 export class OrderDto implements Partial<IOrder> {
@@ -8,7 +8,7 @@ export class OrderDto implements Partial<IOrder> {
     userId: number;
 
     @ApiProperty({ example: new Date(), description: 'The date and time when the order was placed' })
-    @IsDateString()
+    @IsDate()
     date: Date;
 
     @ApiProperty({ example: '5 stars', description: 'The rating given for the order' })

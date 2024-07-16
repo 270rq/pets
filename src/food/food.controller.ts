@@ -1,7 +1,9 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { FoodService } from './food.service';
 import { FoodDto } from './dto/food.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('food')
 @Controller('food')
 export class FoodController {constructor(private readonly foodService: FoodService) {}
 

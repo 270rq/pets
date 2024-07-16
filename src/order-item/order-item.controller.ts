@@ -1,7 +1,9 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { OrderItemService } from './order-item.service';
 import { OrderItemDto } from './dto/orderItem.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('orderItem')
 @Controller('order-item')
 export class OrderItemController {constructor(private readonly orderItemService: OrderItemService) {}
 
@@ -28,4 +30,10 @@ async updateOrderItem(@Param('id') id: number, @Body() body: OrderItemDto) {
 @Delete(':id')
 async deleteOrderItem(@Param('id') id: number) {
   return this.orderItemService.delete(id);
-}}
+}
+
+ @Get(':incorrect/order')
+ async findIncorrectOrders(){
+  return this.orderItemService.findIncorrectOrders()
+ }
+}

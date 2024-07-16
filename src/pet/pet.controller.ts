@@ -1,7 +1,9 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { PetService } from './pet.service';
 import { PetDto } from './dto/pet.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('pet')
 @Controller('pet')
 export class PetController {constructor(private readonly petService: PetService) {}
 

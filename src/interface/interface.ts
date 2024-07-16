@@ -1,3 +1,7 @@
+export interface IBreed{
+  name: string
+}
+
 export interface IUser {
     email: string;
     password: string;
@@ -6,7 +10,7 @@ export interface IUser {
   export interface IPet {
     name: string;
     animal: string;
-    breed: string;
+    breedId: number;
     userId: number;
   }
   
@@ -14,7 +18,7 @@ export interface IUser {
     name: string;
     price: string;
     weight: number;
-    forWhom: number;
+    breedId: number;
   }
   
   export interface IOrder {
