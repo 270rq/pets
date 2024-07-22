@@ -3,6 +3,7 @@ import { UserService } from './user/user.service';
 import { UserController } from './user/user.controller';
 import { UserModule } from './user/user.module';
 import { PetModule } from './pet/pet.module';
+import { ConfigModule } from '@nestjs/config';
 import { FoodController } from './food/food.controller';
 import { FoodService } from './food/food.service';
 import { FoodModule } from './food/food.module';
@@ -10,22 +11,32 @@ import { OrderModule } from './order/order.module';
 import { OrderItemModule } from './order-item/order-item.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { BreedModule } from './breed/breed.module';
+import { AuthModule } from './auth/auth.module';
+import { JwtStrategy } from './auth/jwt.stategy';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      load: [() => ({
+        JWT_SECRET: process.env.JWT_SECRET || 'defaultSecret',
+      })],
+    }),
     UserModule,
     PetModule,
     FoodModule,
     OrderModule,
     OrderItemModule,
     PrismaModule,
-    BreedModule
+    BreedModule,
+    AuthModule
   ],
   controllers: [
     UserController,
     FoodController,
   ],
   providers: [
+    JwtStrategy,
     UserService,
     FoodService,
   ],
