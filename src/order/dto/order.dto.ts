@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsNumber, IsString, IsDate } from 'class-validator';
-import { IOrder } from 'src/interface/interface';
+import { IOrder } from '../../interface/interface';
 
 export class OrderDto implements Partial<IOrder> {
     @ApiProperty({ example: 1, description: 'The ID of the user placing the order' })

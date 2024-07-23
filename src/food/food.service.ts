@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { IFood } from '../interface/interface';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { PrismaService } from '../prisma/prisma.service';
 import { AnimalFoodDto } from './dto/petfoodcomb.dto';
 
 @Injectable()

@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { IOrder } from 'src/interface/interface';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { IOrder } from '../interface/interface';
+import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
 export class OrderService {constructor(private prisma: PrismaService){}

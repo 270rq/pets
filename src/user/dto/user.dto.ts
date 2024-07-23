@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail, IsString, MinLength } from 'class-validator';
-import { IUser } from 'src/interface/interface';
+import { IUser } from '../../interface/interface';
 
 export class UserDto implements Partial<IUser> {
     @ApiProperty({ example: 'user@example.com', description: 'The email address of the user' })

@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { IBreed } from 'src/interface/interface';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { IBreed } from '../interface/interface';
+import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
 export class BreedService { constructor(private prisma: PrismaService) {}

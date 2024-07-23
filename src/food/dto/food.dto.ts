@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsString, IsNumber, IsPositive } from 'class-validator';
-import { IFood } from 'src/interface/interface';
+import { IFood } from '../../interface/interface';
 
 export class FoodDto implements Partial<IFood> {
     @ApiProperty({ example: 'Pizza', description: 'The name of the food' })

@@ -31,4 +31,38 @@ export interface IUser {
     orderId: number;
     foodId: number;
   }
+
+  export interface AppConfigInterface {
+    logger: {
+        level: string | 'error' | 'warn' | 'info' | 'http' | 'verbose' | 'debug' | 'silly';
+        colorLogs: boolean;
+        prettyPrint: boolean;
+    };
+    serviceName: string;
+    longRequestValue: number;
+    version: string;
+    port: number;
+    debug?: boolean;
+    buildTag?: string;
+    development?: boolean;
+}
+
+export interface SwaggerOptionsInterface {
+  swaggerHost?: string;
+  version?: string;
+  serviceName?: string;
+  port?: number;
+  enabled: boolean;
+  buildTag?: string;
+}
+
+export interface IDatabaseConfig {
+  defaults: {
+    orderBy: string
+    limit: number
+  }
+}
+
+
+
   

@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { IPet } from 'src/interface/interface';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { IPet } from '../interface/interface';
+import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
 export class PetService 
